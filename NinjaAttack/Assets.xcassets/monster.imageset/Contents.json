@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "monster.png",
+      "filename" : "m_falcon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "monster@2x.png",
+      "filename" : "m_falcon-1.png",
       "scale" : "2x"
     },
     {
