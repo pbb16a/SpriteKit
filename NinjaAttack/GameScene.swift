@@ -84,13 +84,14 @@ class GameScene: SKScene {
     run(SKAction.repeatForever(
       SKAction.sequence([
         SKAction.run(addMonster),
+        SKAction.run(addStars),
         SKAction.wait(forDuration: 1.0)
         ])
     ))
     physicsWorld.gravity = .zero
     physicsWorld.contactDelegate = self
     
-    let backgroundMusic = SKAudioNode(fileNamed: "background-music-aac.caf")
+    let backgroundMusic = SKAudioNode(fileNamed: "Star Wars Music.caf")
     backgroundMusic.autoplayLooped = true
     addChild(backgroundMusic)
 
@@ -107,7 +108,13 @@ class GameScene: SKScene {
   func addMonster() {
     
     // Create sprite
-    let monster = SKSpriteNode(imageNamed: "monster")
+    //get random "monster" image
+    let randNumber = Int.random(in: 1...6)
+    let imageName = "planet\(randNumber)"
+        
+    let monster = SKSpriteNode(imageNamed: imageName)
+    
+    
     
     // Determine where to spawn the monster along the Y axis
     let actualY = random(min: monster.size.height/2, max: size.height - monster.size.height/2)
@@ -142,13 +149,53 @@ class GameScene: SKScene {
     monster.run(SKAction.sequence([actionMove, loseAction, actionMoveDone]))
 
   }
+  func addStars() {
+    
+    // Create sprite
+    //get random "monster" image
+  
+    let stars = SKSpriteNode(imageNamed: "star")
+    
+    // Determine where to spawn the monster along the Y axis
+    let actualY = random(min: stars.size.height/2, max: size.height - stars.size.height/2)
+    
+    // Position the monster slightly off-screen along the right edge,
+    // and along a random position along the Y axis as calculated above
+    stars.position = CGPoint(x: size.width + stars.size.width/8, y: actualY)
+    
+    // Add the monster to the scene
+    addChild(stars)
+    
+//    stars.physicsBody = SKPhysicsBody(rectangleOf: stars.size) // 1
+//    stars.physicsBody?.isDynamic = true // 2
+//    stars.physicsBody?.categoryBitMask = PhysicsCategory.stars // 3
+//    stars.physicsBody?.contactTestBitMask = PhysicsCategory.stars // 4
+//    stars.physicsBody?.collisionBitMask = PhysicsCategory.none // 5
+//
+//
+    // Determine speed of the monster
+    let actualDuration = random(min: CGFloat(4.0), max: CGFloat(4.0))
+//
+    // Create the actions
+    let actionMove = SKAction.move(to: CGPoint(x: -stars.size.width/2, y: actualY),
+                                   duration: TimeInterval(actualDuration))
+    let actionMoveDone = SKAction.removeFromParent()
+//    let loseAction = SKAction.run() { [weak self] in
+//      guard let `self` = self else { return }
+//      let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+//      let gameOverScene = GameOverScene(size: self.size, won: false)
+//      self.view?.presentScene(gameOverScene, transition: reveal)
+//    }
+    stars.run(SKAction.sequence([actionMove, actionMoveDone]))
+
+  }
 
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     // 1 - Choose one of the touches to work with
     guard let touch = touches.first else {
       return
     }
-    run(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
+    run(SKAction.playSoundFileNamed("pew.caf", waitForCompletion: false))
 
     let touchLocation = touch.location(in: self)
     
@@ -193,6 +240,8 @@ class GameScene: SKScene {
     print("Hit")
     projectile.removeFromParent()
     monster.removeFromParent()
+    
+    run(SKAction.playSoundFileNamed("bang.caf", waitForCompletion: false))
     
     monstersDestroyed += 1
     if monstersDestroyed > 30 {
