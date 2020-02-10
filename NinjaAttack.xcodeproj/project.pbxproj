@@ -13,6 +13,8 @@
 		01E14EE223F1138C00A2082A /* Star Wars Music.caf in Resources */ = {isa = PBXBuildFile; fileRef = 01E14EE123F1138C00A2082A /* Star Wars Music.caf */; };
 		01E14EE423F115BD00A2082A /* pew.caf in Resources */ = {isa = PBXBuildFile; fileRef = 01E14EE323F115BD00A2082A /* pew.caf */; };
 		01E14EE623F115D600A2082A /* bang.caf in Resources */ = {isa = PBXBuildFile; fileRef = 01E14EE523F115D600A2082A /* bang.caf */; };
+		01E14EE823F11E1B00A2082A /* sw_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E14EE723F11E1B00A2082A /* sw_logo.png */; };
+		01E14EEA23F11ED000A2082A /* starss.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01E14EE923F11ED000A2082A /* starss.jpg */; };
 		5C2901831F8F6DE700803663 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2901821F8F6DE700803663 /* LaunchScreen.storyboard */; };
 		AFD63F872036493600E08C66 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD63F862036493600E08C66 /* GameViewController.swift */; };
 		AFD63F892036497100E08C66 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD63F882036497100E08C66 /* GameScene.swift */; };
@@ -30,6 +32,8 @@
 		01E14EE123F1138C00A2082A /* Star Wars Music.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Star Wars Music.caf"; sourceTree = "<group>"; };
 		01E14EE323F115BD00A2082A /* pew.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pew.caf; sourceTree = "<group>"; };
 		01E14EE523F115D600A2082A /* bang.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bang.caf; sourceTree = "<group>"; };
+		01E14EE723F11E1B00A2082A /* sw_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sw_logo.png; sourceTree = "<group>"; };
+		01E14EE923F11ED000A2082A /* starss.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starss.jpg; sourceTree = "<group>"; };
 		5C2901821F8F6DE700803663 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NinjaAttack/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFD63F862036493600E08C66 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = NinjaAttack/GameViewController.swift; sourceTree = "<group>"; };
 		AFD63F882036497100E08C66 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = NinjaAttack/GameScene.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */,
 				D2A5F2071F4A9144005CD714 /* Main.storyboard */,
 				D2A5F20A1F4A9144005CD714 /* Assets.xcassets */,
+				01E14EE923F11ED000A2082A /* starss.jpg */,
+				01E14EE723F11E1B00A2082A /* sw_logo.png */,
 				5C2901821F8F6DE700803663 /* LaunchScreen.storyboard */,
 				D2A5F20F1F4A9144005CD714 /* Info.plist */,
 				AFD63F882036497100E08C66 /* GameScene.swift */,
@@ -166,7 +172,9 @@
 				AFD63F8F203649F800E08C66 /* background-music-aac.caf in Resources */,
 				01E14EDE23F1136600A2082A /* Laser Blaster.caf in Resources */,
 				01E14EE023F1137B00A2082A /* Explosion.caf in Resources */,
+				01E14EE823F11E1B00A2082A /* sw_logo.png in Resources */,
 				01E14EE223F1138C00A2082A /* Star Wars Music.caf in Resources */,
+				01E14EEA23F11ED000A2082A /* starss.jpg in Resources */,
 				D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */,
 				5C2901831F8F6DE700803663 /* LaunchScreen.storyboard in Resources */,
 				01E14EE423F115BD00A2082A /* pew.caf in Resources */,
