@@ -84,8 +84,19 @@ class GameScene: SKScene {
     run(SKAction.repeatForever(
       SKAction.sequence([
         SKAction.run(addMonster),
+        SKAction.wait(forDuration: 1.5)
+        ])
+    ))
+//    run(SKAction.repeatForever(
+//      SKAction.sequence([
+//        SKAction.run(addStars),
+//        SKAction.wait(forDuration: 0.5)
+//        ])
+//    ))
+    run(SKAction.repeatForever(
+      SKAction.sequence([
         SKAction.run(addStars),
-        SKAction.wait(forDuration: 1.0)
+        SKAction.wait(forDuration: TimeInterval(random(min: CGFloat(0.2), max: CGFloat(0.9))))
         ])
     ))
     physicsWorld.gravity = .zero
@@ -134,7 +145,7 @@ class GameScene: SKScene {
 
     
     // Determine speed of the monster
-    let actualDuration = random(min: CGFloat(2.0), max: CGFloat(4.0))
+    let actualDuration = random(min: CGFloat(3.0), max: CGFloat(7.0))
     
     // Create the actions
     let actionMove = SKAction.move(to: CGPoint(x: -monster.size.width/2, y: actualY),
@@ -174,7 +185,7 @@ class GameScene: SKScene {
 //
 //
     // Determine speed of the monster
-    let actualDuration = random(min: CGFloat(4.0), max: CGFloat(4.0))
+    let actualDuration = random(min: CGFloat(6.0), max: CGFloat(6.0))
 //
     // Create the actions
     let actionMove = SKAction.move(to: CGPoint(x: -stars.size.width/2, y: actualY),
